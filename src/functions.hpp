@@ -3,7 +3,7 @@
 
 //#include "globals.hpp"
 
-void StartInit(void);
+void StartInit(void); //
 
 void readParameter();
 void readTemperatures();
