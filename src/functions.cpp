@@ -48,7 +48,7 @@ void fireControl(){
     ;
     break;
   case STS_OFEN_RELAY_ON:
-    delay(1000);
+    delay(20);
     stsOfen=STS_OFEN_VORLUEFTEN_ON;
     ;
     break;
