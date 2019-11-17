@@ -107,7 +107,7 @@ void outputSerial(){
   Serial.println ("Parameter aus EEPROM 1: ");
   //Serial.print(EEPROM.read(0));
 }
-
+//
 void compare(const struct s *left, const struct s *right) { 
   //if (0 == memcmp(left, right, sizeof(struct s))) {
     /* ... */
