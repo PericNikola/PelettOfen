@@ -24,7 +24,7 @@ void loop() {
 
     readTemperatures();
     outputSerial();
-    fireControl();
+    fireControl(); //auf kleinen Laptophinzugefügt
     
     
 
