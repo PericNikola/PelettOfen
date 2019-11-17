@@ -8,7 +8,7 @@
 
 // Use software SPI: CS, DI, DO, CLK
 Adafruit_MAX31856 maxthermo = Adafruit_MAX31856(CS, MOSI, MISO, CLK);
-stsOfen_t stsOfen;
+stsOfen_t stsOfen; //
 
 
 void StartInit(){
