@@ -23,7 +23,7 @@ struct MachineParameter {
   int pr02_StabilieirungZeit_FIRE_ON; // Zeit solange die Flamme beim Status FIRE ON stabilisiert wird
   int pr03_AbstandszeitReinigung;     // Reinunung Intervall des Pelett Brennbehälters
   int pr04_Schnecke_ein_LOAD_WOOD;    // Schneckeneinschaltzeit bei Start Vorgang
-  int pr05_Schnecke_ein_FIRE_ON;      // 
+  int pr05_Schnecke_ein_FIRE_ON;      // Schneckenlaufzeit Stufe Fire ON
   int pr06_Schnecke_ein_STUFE1;
   int pr07_Schnecke_ein_STUFE2;
   int pr08_Schnecke_ein_STUFE3;
