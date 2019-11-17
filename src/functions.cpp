@@ -109,9 +109,10 @@ void outputSerial(){
 }
 
 void compare(const struct s *left, const struct s *right) { 
-  if (0 == memcmp(left, right, sizeof(struct s))) {
+  //if (0 == memcmp(left, right, sizeof(struct s))) {
     /* ... */
-  }
+  //};
+  ;
 }
 
 float kessel_temp(){
