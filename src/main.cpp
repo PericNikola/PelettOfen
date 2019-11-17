@@ -4,7 +4,7 @@
 
 unsigned long lastmillis = 0;
 int auswahl=0;
-#define INTERVAL_MESSAGE1 1000
+#define INTERVAL_MESSAGE1 300
 
 
 
