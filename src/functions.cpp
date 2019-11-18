@@ -5,6 +5,9 @@
 #include <Adafruit_MAX31856.h>
 #include <EEPROM.h>
 #include <string.h>
+#include <Nextion.h>
+#include <INextionColourable.h>
+#include <SoftwareSerial.h>
 
 // Use software SPI: CS, DI, DO, CLK
 Adafruit_MAX31856 maxthermo = Adafruit_MAX31856(CS, MOSI, MISO, CLK);
