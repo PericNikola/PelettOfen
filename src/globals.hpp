@@ -44,7 +44,6 @@ struct MachineParameter {
 
   int pr45_Ladezeit;                  // 
   int pr46_WarteZeitNachVorladen;     // Wartezeit nach dem Vorladen
-
 };
 #pragma pack(pop)
 
