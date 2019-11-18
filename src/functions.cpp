@@ -8,7 +8,8 @@
 
 // Use software SPI: CS, DI, DO, CLK
 Adafruit_MAX31856 maxthermo = Adafruit_MAX31856(CS, MOSI, MISO, CLK);
-stsOfen_t stsOfen; //
+stsOfen_t stsOfen; // Status Ofenschrittkette
+HmiParameter comHMI;  // HMI TouchPanel Befehle
 
 
 void StartInit(){
@@ -25,6 +26,8 @@ void StartInit(){
   maxthermo.setNoiseFilter(MAX31856_NOISE_FILTER_50HZ);
   //EEPROM.write(0, 123);
   //EEPROM.commit();
+
+  stsOfen=STS_OFEN_OFF; // Status Schrittkette Ofensteuerung
 }
 
 void readParameter() {
@@ -42,9 +45,11 @@ void fireControl(){
   
   switch (stsOfen){
   case STS_OFEN_OFF:
-    digitalWrite(LED_BUILTIN, HIGH);
-    stsOfen=STS_OFEN_RELAY_ON;
-    ;
+    if (comHMI.btnOfenEIN);
+    {
+      /* code */;
+    }
+    
     break;
   case STS_OFEN_RELAY_ON:
     delay(1000);

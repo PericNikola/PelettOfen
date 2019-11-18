@@ -52,11 +52,13 @@ struct MachineParameter {
 #pragma pack(pop)
 struct HmiParameter
 {
-  bool OfenEIN;
-  bool OfenAUS;
-  bool OfenReset;
-  bool SollTempUp;
-  bool SollTempDown;
+  bool btnOfenEIN;
+  bool btnOfenAUS;
+  bool btnOfenReset;
+  bool btnSollTempUp;
+  bool btnSollTempDown;
+  bool btnPowerLevelUP;
+  bool bthPowerDown;
 };
 
 #pragma pack(push, 1)
