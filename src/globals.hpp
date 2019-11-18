@@ -29,11 +29,11 @@ struct MachineParameter {
   int pr08_Schnecke_ein_STUFE3;       // Schneckenlaufzeit Stufe 3
   int pr09_Schnecke_ein_STUFE4;       // Schneckenlaufzeit Stufe 4
   int pr10_Schnecke_ein_STUFE5;       // Schneckenlaufzeit Stufe 5
-  int pr11;
-  int pr12;
-  int pr13;
-  int pr14;
-  int pr15;
+  int pr11_Alarm_Verzoegerung;        // Verzögerung bis der Alarm Schritt aktiviert wird
+  int pr12_BrennBehaelterReinT;       // Brenntopf Reinigungsdauer
+  int pr13_AbgasTemp_OfenIstEIN;      // Minimale Rauchtemperatur, um den Ofen als eingeschaltet zu betrachten
+  int pr14_AbgasTemp_Max;             // Maximale Abgastemperatur, ist diese erreicht, arbeit der Ofen auf Stufe 1 oder OFF
+  int pr15_PumpeEinTemperatur;        // Pumpe Ein Relais für Wasserbezug (Wird bei mir nicht gebraucht das eigene Steuerung)
   int pr16_Vent_Drehzahl_LOAD_WOOD;   // Ventilatordrehzahl/Stufe beim Startvorgang
   int pr17_Vent_Drehzahl_FIRE_ON;
   int pr18_Vent_Drehzahl_STUFE1;
@@ -41,6 +41,10 @@ struct MachineParameter {
   int pr20_Vent_Drehzahl_STUFE3;
   int pr21_Vent_Drehzahl_STUFE4;
   int pr22_Vent_Drehzahl_STUFE5;
+
+  int pr45_Ladezeit;                  // 
+  int pr46_WarteZeitNachVorladen;     // Wartezeit nach dem Vorladen
+
 };
 #pragma pack(pop)
 

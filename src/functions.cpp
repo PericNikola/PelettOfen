@@ -40,8 +40,7 @@ void readTemperatures() {
 }
 void fireControl(){
   
-  switch (stsOfen)
-  {
+  switch (stsOfen){
   case STS_OFEN_OFF:
     digitalWrite(LED_BUILTIN, HIGH);
     stsOfen=STS_OFEN_RELAY_ON;
@@ -88,8 +87,7 @@ void fireControl(){
     break;
   
   default:
-    break;
-  }
+    break; }
   Serial.println(stsOfen);
   
 }
