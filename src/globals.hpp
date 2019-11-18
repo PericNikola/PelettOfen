@@ -30,7 +30,7 @@ struct MachineParameter {
   int pr09_Schnecke_ein_STUFE4;       // Schneckenlaufzeit Stufe 4
   int pr10_Schnecke_ein_STUFE5;       // Schneckenlaufzeit Stufe 5
   int pr11_Alarm_Verzoegerung;        // Verzögerung bis der Alarm Schritt aktiviert wird
-  int pr12_BrennBehaelterReinT;       // Brenntopf Reinigungsdauer
+  int pr12_BrennBehaelterReinDauer;   // Brenntopf Reinigungsdauer
   int pr13_AbgasTemp_OfenIstEIN;      // Minimale Rauchtemperatur, um den Ofen als eingeschaltet zu betrachten
   int pr14_AbgasTemp_Max;             // Maximale Abgastemperatur, ist diese erreicht, arbeit der Ofen auf Stufe 1 oder OFF
   int pr15_PumpeEinTemperatur;        // Pumpe Ein Relais für Wasserbezug (Wird bei mir nicht gebraucht das eigene Steuerung)
@@ -44,8 +44,27 @@ struct MachineParameter {
 
   int pr45_Ladezeit;                  // 
   int pr46_WarteZeitNachVorladen;     // Wartezeit nach dem Vorladen
+  int pr80_minTemp_Wasser;            // Minimale Temperatur für Ofen EIN
+  int pr82_maxTemp_Wasser;            // Maximale Wassertemperatur für Ofen AUS
+  int pr83_sollTempWasser;            // Solltemperatur Wasser
+  
 };
 #pragma pack(pop)
+struct HmiParameter
+{
+  bool OfenEIN;
+  bool OfenAUS;
+  bool OfenReset;
+  bool SollTempUp;
+  bool SollTempDown;
+};
+
+#pragma pack(push, 1)
+
+
+#pragma pack(pop)
+
+
 
 typedef enum STS_OFEN{
   STS_OFEN_OFF,           // Ofen ausgeschaltet
