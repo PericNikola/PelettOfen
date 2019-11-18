@@ -54,15 +54,15 @@ void fireControl(){
     break;
   
   case STS_OFEN_VORLUEFTEN_ON:
-    digitalWrite(LED_BUILTIN, LOW);
-    stsOfen=STS_OFEN_VENT_ON;
     ;
     break;
-  case STS_OFEN_VENT_ON:
-    stsOfen=STS_OFEN_OFF;
+  case STS_OFEN_LOAD_WOOD_1:
     ;
     break;
-  case STS_OFEN_LOAD_WOOD:
+  case STS_OFEN_LOAD_WOOD_2:
+    ;
+    break;
+  case STS_OFEN_LOAD_WOOD_3:
     ;
     break;
   case STS_OFEN_FIRE_ON:
@@ -72,6 +72,9 @@ void fireControl(){
     ;
     break;
   case STS_OFEN_TEMP_ERREICHT:
+    ;
+    break;
+  case STS_OFEN_STUF1_AUSLAUF:
     ;
     break;
   case STS_OFEN_FIRE_STOP:
