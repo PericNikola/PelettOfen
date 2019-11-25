@@ -5,10 +5,14 @@
 #include <Adafruit_MAX31856.h>
 #include <EEPROM.h>
 #include <string.h>
+#include <Nextion.h>
+#include <INextionColourable.h>
+#include <SoftwareSerial.h>
 
 // Use software SPI: CS, DI, DO, CLK
 Adafruit_MAX31856 maxthermo = Adafruit_MAX31856(CS, MOSI, MISO, CLK);
-stsOfen_t stsOfen; //
+stsOfen_t stsOfen; // Status Ofenschrittkette
+HmiParameter comHMI;  // HMI TouchPanel Befehle
 
 
 void StartInit(){
@@ -25,6 +29,8 @@ void StartInit(){
   maxthermo.setNoiseFilter(MAX31856_NOISE_FILTER_50HZ);
   //EEPROM.write(0, 123);
   //EEPROM.commit();
+
+  stsOfen=STS_OFEN_OFF; // Status Schrittkette Ofensteuerung
 }
 
 void readParameter() {
@@ -40,12 +46,13 @@ void readTemperatures() {
 }
 void fireControl(){
   
-  switch (stsOfen)
-  {
+  switch (stsOfen){
   case STS_OFEN_OFF:
-    digitalWrite(LED_BUILTIN, HIGH);
-    stsOfen=STS_OFEN_RELAY_ON;
-    ;
+    if (comHMI.btnOfenEIN);
+    {
+      /* code */;
+    }
+    
     break;
   case STS_OFEN_RELAY_ON:
     delay(20);
@@ -54,15 +61,15 @@ void fireControl(){
     break;
   
   case STS_OFEN_VORLUEFTEN_ON:
-    digitalWrite(LED_BUILTIN, LOW);
-    stsOfen=STS_OFEN_VENT_ON;
     ;
     break;
-  case STS_OFEN_VENT_ON:
-    stsOfen=STS_OFEN_OFF;
+  case STS_OFEN_LOAD_WOOD_1:
     ;
     break;
-  case STS_OFEN_LOAD_WOOD:
+  case STS_OFEN_LOAD_WOOD_2:
+    ;
+    break;
+  case STS_OFEN_LOAD_WOOD_3:
     ;
     break;
   case STS_OFEN_FIRE_ON:
@@ -72,6 +79,9 @@ void fireControl(){
     ;
     break;
   case STS_OFEN_TEMP_ERREICHT:
+    ;
+    break;
+  case STS_OFEN_STUF1_AUSLAUF:
     ;
     break;
   case STS_OFEN_FIRE_STOP:
@@ -85,8 +95,7 @@ void fireControl(){
     break;
   
   default:
-    break;
-  }
+    break; }
   Serial.println(stsOfen);
   
 }
